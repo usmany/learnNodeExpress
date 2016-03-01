@@ -1,0 +1,13 @@
+{
+  "name": "meadowtravel",
+  "version": "1.0.0",
+  "description": "demo site to learn nodejs and express based on a book. Fake travel site",
+  "main": "meadowlark.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
