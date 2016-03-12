@@ -46,6 +46,12 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(function(req, res, next) {
+    if(!res.locals.partials) res.locals.partials = {};
+    res.locals.partials.weatherContext = getWeatherData();
+    next();
+});
+
 app.disable('x-powered-by');
 
 app.get('/', function(req, res) {
@@ -76,12 +82,6 @@ app.get('/headers', function(req, res) {
     var s = '';
     for (var name in req.headers) s += name + ': ' + req.headers[name] + '\n';
     res.send(s);
-});
-
-app.use(function(req, res, next) {
-    if(!res.locals.partials) res.locals.partials = {};
-    res.locals.partials.weather = getWeatherData();
-    next();
 });
 
 // 404 catch-all handler (middleware)
